@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ToastOrSnackbar</string>
+    <string name="toastText">Custom Toast</string>
 </resources>
