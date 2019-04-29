@@ -1,5 +1,7 @@
 package com.aariyan.googleCertificate.toastorsnackbar;
 
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -10,6 +12,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    private CoordinatorLayout coordinatorLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,8 +22,18 @@ public class MainActivity extends AppCompatActivity {
         //Simple Toast :
         //Toast.makeText(this, "Simple Toast", Toast.LENGTH_SHORT).show();
 
+        coordinatorLayout = findViewById(R.id.coordinatorLayout);
+        Snackbar.make(coordinatorLayout,R.string.snackBarText,Snackbar.LENGTH_LONG)
+                .setAction(R.string.undo, new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        //this is for Custom Toast show when click on Undo Button :
+                        showCustomToast();
+                    }
+                }).show();
         //Custom Toast
-        showCustomToast();
+        //showCustomToast();
     }
 
     private void showCustomToast() {
