@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
                         showCustomToast();
                     }
                 }).show();
+
         //Custom Toast
         //showCustomToast();
     }
